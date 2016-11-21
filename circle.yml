@@ -69,6 +69,5 @@ test:
     - python -c "import cleware" # check python2 import
     - ./example.py
     - python3 -m unittest discover -s tests -v #python3 unit tests
-    
     - printf 'use Module::Load; \n load cleware; \n '|perl -w # test perl module
     - ./example.pl
