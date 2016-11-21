@@ -77,3 +77,5 @@ test:
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
     - find . -name *xml -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+    - find . -name *xml
+    - ls $CIRCLE_TEST_REPORTS/junit/
