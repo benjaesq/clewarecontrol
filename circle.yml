@@ -5,6 +5,8 @@ machine:
     _SDK_: /usr/local/android-sdk-linux/
     PKG_CONFIG_PATH: /usr/lib/x86_64-linux-gnu/pkgconfig
 dependencies:
+  override:
+    - echo dummy
   pre:
     - sudo apt-get update
     - sudo apt-get install telnet x11-utils xvkbd swig libusb-dev libperl-dev
