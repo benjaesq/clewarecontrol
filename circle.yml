@@ -15,7 +15,10 @@ dependencies:
     - sudo apt-get install swig
     - sudo apt-get install libusb-dev
     - sudo apt-get install libperl-dev
-    - sudo apt-get install python-dev ; exit 0
+    - sudo apt-get install python-dev
+    - sudo apt-get install python3-pip
+    - sudo pip install unittest-xml-reporting
+    - sudo pip3 install unittest-xml-reporting
   post:
     - pyenv local 3.5.2
 
@@ -68,6 +71,6 @@ test:
     - ./clewarecontrol -l # test binary
     - python -c "import cleware" # check python2 import
     - ./example.py
-    - python3 -m unittest discover -s tests -v #python3 unit tests
+    - python3 runtests.py #python3 unit tests
     - printf 'use Module::Load; \n load cleware; \n '|perl -w # test perl module
     - ./example.pl
