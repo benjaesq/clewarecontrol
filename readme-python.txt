@@ -6,10 +6,35 @@ To build the Python code:
  - install the swig package
    on Debian and Fedora this is called "swig"
 
- - run:
-	make cleware_python
-   this will produce: _cleware.so and cleware.py.
-   These two files must be installed in your Python system.
+ - create the python module and install it in your system:
 
- - look at example.py to see how it works (e.g. execute python example.py)
-   make sure that the user you run your scripts with has enough rights to access the USB devices!
+    # make cleware_python
+
+   or for python3:
+
+    # make cleware_python3
+
+   Note that the # symbol at the beginning of a line means it has to be
+   executed with sufficient priviledges.
+
+   This will produce the appropriate _cleware.so and cleware.py modules and
+   copy them to your system's module path.
+
+ - use the cleware.py package:
+   open a python or a python3 command line interpreter and import the cleware
+   module:
+
+    >>> import cleware
+
+   Instantiate a Cleware USB access object:
+
+    >>> c = cleware.CUSBaccess()
+
+   Enumerate the cleware devices attached to the system
+
+    >>> num = c.OpenCleware()
+
+   More information on how to use the cleware.py module can be found at the
+   example.py script. (e.g. execute python example.py)
+   make sure that the user you run your scripts with has enough rights to
+   access the USB devices!
