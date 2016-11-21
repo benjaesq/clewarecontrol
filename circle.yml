@@ -7,7 +7,8 @@ machine:
 dependencies:
   pre:
     - sudo apt-get update
-    - sudo apt-get install telnet x11-utils xvkbd swig libusb-dev libperl-dev python-dev python3-pip
+    - sudo apt-get install telnet x11-utils xvkbd swig libusb-dev libperl-dev
+      python-dev python3-pip
   post:
     - pyenv local 3.5.2
 
